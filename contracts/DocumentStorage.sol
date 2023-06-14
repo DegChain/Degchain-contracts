@@ -9,7 +9,7 @@ contract DocumentStorage {
         string ipfsHash;
     }
     //mapping to store documents by user
-    mapping(address => Document[]) private userDocuments;
+    mapping(address => Document[]) private userToDocuments;
     uint256 private documentIdCounter; //unique to each document
 
     function uploadDocument(string calldata ipfsHash) external {
@@ -18,13 +18,13 @@ contract DocumentStorage {
             id: documentIdCounter,
             owner: msg.sender,
             ipfsHash: ipfsHash
-        })
+        });
         //add the new doc in the mapping
-        userDocuments[msg.sender].push(newDocument);
+        userToDocuments[msg.sender].push(newDocument);
         documentIdCounter++;
     }
-    function getUserDocuments() external view returns (Document[] memory)
-    {
-        return userDocuments[msg.sender]; //rather than using userDocuments[userAddress]
+
+    function getUserDocuments() external view returns (Document[] memory) {
+        return userToDocuments[msg.sender]; //rather than using userDocuments[userAddress]
     }
 }

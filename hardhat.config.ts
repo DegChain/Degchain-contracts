@@ -5,6 +5,7 @@ import "hardhat-gas-reporter";
 import "dotenv/config";
 import "hardhat-deploy"; //namedAccounts comes from here
 import "@nomicfoundation/hardhat-toolbox";
+//import "hardhat-console";
 //import "solidity-coverage";
 import { HardhatUserConfig } from "hardhat/config";
 
@@ -16,7 +17,8 @@ const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL || "";
 const SEPOLIA_RPC_URL =
     "https://eth-sepolia.g.alchemy.com/v2/x8Tk3UigEvQ6pEq8C3PC8SKZawl3TrU6";
 //const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL;
-const PRIVATE_KEY = process.env.PRIVATE_KEY || "";
+const PRIVATE_KEY =
+    "fc557f254c276a9dc86dabf08a6886e0fe3b78e36e44028d56ab86491daa2a51";
 export const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || "";
 const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY || "";
 const config: HardhatUserConfig = {
@@ -31,7 +33,7 @@ const config: HardhatUserConfig = {
             chainId: 5,
         },
         sepolia: {
-            url: "https://eth-sepolia.g.alchemy.com/v2/x8Tk3UigEvQ6pEq8C3PC8SKZawl3TrU6",
+            url: SEPOLIA_RPC_URL,
             chainId: 11155111,
             accounts: [PRIVATE_KEY],
         },
