@@ -5584,6 +5584,11 @@ solidity-coverage@^0.8.0:
     shelljs "^0.8.3"
     web3-utils "^1.3.6"
 
+solidity@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/solidity/-/solidity-0.0.1.tgz#2b344db06bf2f2b75780d9c89d3b0e69b5c6c7a4"
+  integrity sha512-32RjRNI86JUiaJcjbp2mbttRqLvdEjZJV0qjxGz9TUlwZKOMxVVMGkwBq8A4aHvQNJqA9oydL6/eAwHzElmNyg==
+
 source-map-support@^0.5.13:
   version "0.5.21"
   resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.21.tgz#04fe7c7f9e1ed2d662233c28cb2b35b9f63f6e4f"

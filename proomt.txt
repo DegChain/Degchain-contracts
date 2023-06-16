@@ -1,0 +1,21 @@
+In the front-end portion of the app , I have these functionalities:- 
+1. in the admin-dashboard admin can upload pdf , unique to a student ,
+by filling information in a box which contains two fields, 
+1. Roll_Number, which will map to a unique accountAddress, hence we can ge the 
+accountAddress of the student using the findAccountAddressByRollNumber function
+from UserManager.solidity
+2. Document Name is input
+3. The admin can upload the pdf file using some sort of button, after that the 
+pdf is uploaded to ipfs and a hash is generated, which will be added to 
+userToDocuments mapping using the ```function uploadDocument(
+        string memory documentName,
+        string memory ipfsHash,
+        address userAddress
+    ) external onlyRegisteredUser{} ``` from DocumentManager.sol
+FYI I have install the kubo implementation of ipfs on my computer
+
+implement this functionalities,
+
+What I know:-
+"1. I know how to add file to ipfs using ```ipfs add <filepath>```
+2. How to download file using ```ipfs get >file-hash```
