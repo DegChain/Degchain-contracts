@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.8;
 
-//imports
 import "./UserManager.sol";
 
 contract DocumentManager {
@@ -30,8 +29,8 @@ contract DocumentManager {
     Document[] private documents;
 
     //constructor
-    constructor(UserManager _userManager) {
-        userManager = _userManager;
+    constructor(address _userManagerAddress) {
+        userManager = UserManager(_userManagerAddress);
         documentIdCounter = 0;
     }
 
