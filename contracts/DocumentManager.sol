@@ -38,22 +38,22 @@ contract DocumentManager {
      * @dev Uploads a new document for a user.
      * @param documentName The name of the document.
      * @param ipfsHash The IPFS hash of the document.
-     * @param userAddress The address of the user.
+     * @param ownerAddress The address of the user.
      */
     function uploadDocument(
         string memory documentName,
         string memory ipfsHash,
-        address userAddress
+        address ownerAddress
     ) external onlyRegisteredUser {
         require(bytes(ipfsHash).length > 0, "IPFS Hash cannot be empty.");
         Document memory newDocument = Document({
             documentId: documentIdCounter,
             documentName: documentName,
             ipfsHash: ipfsHash,
-            ownerAddress: userAddress
+            ownerAddress: ownerAddress
         });
         //add the new document to the mapping
-        userToDocuments[userAddress].push(newDocument);
+        userToDocuments[ownerAddress].push(newDocument);
         documents.push(newDocument);
         documentIdCounter++;
     }

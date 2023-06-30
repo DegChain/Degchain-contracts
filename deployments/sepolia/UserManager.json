@@ -1,0 +1,523 @@
+{
+  "address": "0x0bC495E27b0CE2F1CA24E9D4D05865A4bDfCF07b",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "rollNumber",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "DOB",
+          "type": "bytes32"
+        }
+      ],
+      "name": "UserManager__InvalidDOB",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "emailId",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "password",
+          "type": "string"
+        }
+      ],
+      "name": "UserManager__InvalidPassword",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "accountAddress",
+          "type": "address"
+        }
+      ],
+      "name": "UserManager__InvalidPrivateKey",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "rollNumber",
+          "type": "bytes32"
+        }
+      ],
+      "name": "UserManager__RollNumberNotFound",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "accountAddress",
+          "type": "address"
+        }
+      ],
+      "name": "AdminLoggedIn",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "string",
+          "name": "emailId",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "adminAddress",
+          "type": "address"
+        }
+      ],
+      "name": "AdminRegistered",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "accountAddress",
+          "type": "address"
+        }
+      ],
+      "name": "UserLoggedIn",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "rollNumber",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "DOB",
+          "type": "bytes32"
+        }
+      ],
+      "name": "UserRegistered",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "rollNumber",
+          "type": "bytes32"
+        }
+      ],
+      "name": "findAccountAddressByRollNumber",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "rollNumber",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getRollNumberToDOB",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "userAddress",
+          "type": "address"
+        }
+      ],
+      "name": "getUser",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes32",
+              "name": "rollNumber",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "dateOfBirth",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "address",
+              "name": "accountAddress",
+              "type": "address"
+            }
+          ],
+          "internalType": "struct UserManager.User",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "loginAdmin",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "result",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "loginUser",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "result",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "emailId",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "password",
+          "type": "string"
+        }
+      ],
+      "name": "registerAdmin",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "DOB",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "rollNumber",
+          "type": "bytes32"
+        }
+      ],
+      "name": "registerUser",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "rollNumber",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "dateOfBirth",
+          "type": "bytes32"
+        }
+      ],
+      "name": "setRollNumberToDOB",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x17686597c7777e41229bb8222fc55aec812643c70f9a6cead9fd80ac1a441596",
+  "receipt": {
+    "to": null,
+    "from": "0xEC1C545CbE03A8aB14D73D312777204393bfC3F8",
+    "contractAddress": "0x0bC495E27b0CE2F1CA24E9D4D05865A4bDfCF07b",
+    "transactionIndex": 59,
+    "gasUsed": "1062327",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xa0341b513be9d783c07d5822b44f1f5abf7dce9dc1306be4c158b322abeea716",
+    "transactionHash": "0x17686597c7777e41229bb8222fc55aec812643c70f9a6cead9fd80ac1a441596",
+    "logs": [],
+    "blockNumber": 3704578,
+    "cumulativeGasUsed": "17188169",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "8c75efd136895d140a2c77538722b650",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"rollNumber\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"DOB\",\"type\":\"bytes32\"}],\"name\":\"UserManager__InvalidDOB\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"emailId\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"password\",\"type\":\"string\"}],\"name\":\"UserManager__InvalidPassword\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"accountAddress\",\"type\":\"address\"}],\"name\":\"UserManager__InvalidPrivateKey\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"rollNumber\",\"type\":\"bytes32\"}],\"name\":\"UserManager__RollNumberNotFound\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"accountAddress\",\"type\":\"address\"}],\"name\":\"AdminLoggedIn\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"string\",\"name\":\"emailId\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"adminAddress\",\"type\":\"address\"}],\"name\":\"AdminRegistered\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"accountAddress\",\"type\":\"address\"}],\"name\":\"UserLoggedIn\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"rollNumber\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"DOB\",\"type\":\"bytes32\"}],\"name\":\"UserRegistered\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"rollNumber\",\"type\":\"bytes32\"}],\"name\":\"findAccountAddressByRollNumber\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"rollNumber\",\"type\":\"bytes32\"}],\"name\":\"getRollNumberToDOB\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"userAddress\",\"type\":\"address\"}],\"name\":\"getUser\",\"outputs\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"rollNumber\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"dateOfBirth\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"accountAddress\",\"type\":\"address\"}],\"internalType\":\"struct UserManager.User\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"loginAdmin\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"result\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"loginUser\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"result\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"emailId\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"password\",\"type\":\"string\"}],\"name\":\"registerAdmin\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"DOB\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"rollNumber\",\"type\":\"bytes32\"}],\"name\":\"registerUser\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"rollNumber\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"dateOfBirth\",\"type\":\"bytes32\"}],\"name\":\"setRollNumberToDOB\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"findAccountAddressByRollNumber(bytes32)\":{\"params\":{\"rollNumber\":\"The roll number of the user\"},\"returns\":{\"_0\":\"accountAddress The account address of the user\"}},\"getRollNumberToDOB(bytes32)\":{\"params\":{\"rollNumber\":\"The roll number of the user\"},\"returns\":{\"_0\":\"dateOfBirth The date of birth of the user\"}},\"getUser(address)\":{\"params\":{\"userAddress\":\"The address of the user\"},\"returns\":{\"_0\":\"user The user details\"}},\"loginAdmin()\":{\"returns\":{\"result\":\"True if the login is successful, false otherwise\"}},\"loginUser()\":{\"returns\":{\"result\":\"True if the login is successful, false otherwise\"}},\"registerAdmin(string,string)\":{\"params\":{\"emailId\":\"The email ID of the admin\",\"password\":\"The password of the admin\"}},\"registerUser(bytes32,bytes32)\":{\"params\":{\"DOB\":\"The date of birth of the user\",\"rollNumber\":\"The roll number of the user\"}},\"setRollNumberToDOB(bytes32,bytes32)\":{\"params\":{\"dateOfBirth\":\"The date of birth of the user\",\"rollNumber\":\"The roll number of the user\"}}},\"title\":\"UserManager\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"findAccountAddressByRollNumber(bytes32)\":{\"notice\":\"Finds the account address by roll number\"},\"getRollNumberToDOB(bytes32)\":{\"notice\":\"Gets the date of birth for a given roll number\"},\"getUser(address)\":{\"notice\":\"Gets the details of a particular user\"},\"loginAdmin()\":{\"notice\":\"Logs in an admin\"},\"loginUser()\":{\"notice\":\"Logs in a user by verifying their private key\"},\"registerAdmin(string,string)\":{\"notice\":\"Registers a new admin\"},\"registerUser(bytes32,bytes32)\":{\"notice\":\"Registers a new user\"},\"setRollNumberToDOB(bytes32,bytes32)\":{\"notice\":\"Sets the date of birth for a given roll number\"}},\"notice\":\"A contract to register and login users\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/UserManager.sol\":\"UserManager\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/UserManager.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.8;\\n\\n//errors\\nerror UserManager__InvalidDOB(bytes32 rollNumber, bytes32 DOB);\\nerror UserManager__InvalidPrivateKey(address accountAddress);\\nerror UserManager__InvalidPassword(string emailId, string password);\\nerror UserManager__RollNumberNotFound(bytes32 rollNumber);\\n\\n/**\\n * @title UserManager\\n * @notice A contract to register and login users\\n */\\ncontract UserManager {\\n    //events\\n    event UserRegistered(bytes32 indexed rollNumber, bytes32 DOB);\\n    event UserLoggedIn(address accountAddress);\\n    event AdminRegistered(string indexed emailId, address adminAddress);\\n    event AdminLoggedIn(address accountAddress);\\n\\n    //structs for User and Admin\\n    struct User {\\n        bytes32 rollNumber;\\n        bytes32 dateOfBirth;\\n        address accountAddress;\\n    }\\n    struct Admin {\\n        string emailId;\\n        address account;\\n    }\\n\\n    //variables\\n    string private constant PASSWORD = \\\"something_else\\\";\\n    mapping(bytes32 => bytes32) private rollNumberToDOB; //sign-up\\n    mapping(address => User) private users; //for login\\n    // Declare an array to store user addresses\\n    address[] private userAddresses; //for finding address from roll_number\\n    mapping(address => Admin) private admins; //login of Admins (O(logn) time complexity)\\n\\n    /**\\n     * @notice Registers a new user\\n     * @param DOB The date of birth of the user\\n     * @param rollNumber The roll number of the user\\n     */\\n    function registerUser(bytes32 DOB, bytes32 rollNumber) external {\\n        if (rollNumberToDOB[rollNumber] != DOB) {\\n            revert UserManager__InvalidDOB(rollNumber, DOB);\\n        }\\n        User memory newUser = User({\\n            rollNumber: rollNumber,\\n            dateOfBirth: DOB,\\n            accountAddress: msg.sender\\n        });\\n        users[msg.sender] = newUser;\\n        userAddresses.push(msg.sender);\\n        emit UserRegistered(rollNumber, DOB);\\n    }\\n\\n    /**\\n     * @notice Logs in a user by verifying their private key\\n     * @return result True if the login is successful, false otherwise\\n     */\\n    function loginUser() external returns (bool result) {\\n        if (users[msg.sender].rollNumber == \\\"\\\") {\\n            return false;\\n        }\\n        emit UserLoggedIn(msg.sender);\\n        return true;\\n    }\\n\\n    /**\\n     * @notice Gets the details of a particular user\\n     * @param userAddress The address of the user\\n     * @return user The user details\\n     */\\n    function getUser(address userAddress) external view returns (User memory) {\\n        if (users[userAddress].rollNumber == \\\"\\\") {\\n            revert UserManager__InvalidPrivateKey(userAddress);\\n        }\\n        return users[userAddress];\\n    }\\n\\n    //Admin Functionalities\\n    /**\\n     * @notice Registers a new admin\\n     * @param emailId The email ID of the admin\\n     * @param password The password of the admin\\n     */\\n    function registerAdmin(\\n        string memory emailId,\\n        string memory password\\n    ) public {\\n        if (keccak256(bytes(password)) != keccak256(bytes(PASSWORD))) {\\n            revert UserManager__InvalidPassword(emailId, password);\\n        }\\n        Admin memory newAdmin = Admin({emailId: emailId, account: msg.sender});\\n        admins[msg.sender] = newAdmin;\\n        emit AdminRegistered(emailId, msg.sender);\\n    }\\n\\n    /**\\n     * @notice Logs in an admin\\n     * @return result True if the login is successful, false otherwise\\n     */\\n    function loginAdmin() external returns (bool result) {\\n        if (admins[msg.sender].account == address(0)) {\\n            return false;\\n        }\\n        emit AdminLoggedIn(msg.sender);\\n        return true;\\n    }\\n\\n    /**\\n     * @notice Sets the date of birth for a given roll number\\n     * @param rollNumber The roll number of the user\\n     * @param dateOfBirth The date of birth of the user\\n     */\\n    function setRollNumberToDOB(\\n        bytes32 rollNumber,\\n        bytes32 dateOfBirth\\n    ) external {\\n        rollNumberToDOB[rollNumber] = dateOfBirth;\\n    }\\n\\n    /**\\n     * @notice Gets the date of birth for a given roll number\\n     * @param rollNumber The roll number of the user\\n     * @return dateOfBirth The date of birth of the user\\n     */\\n    function getRollNumberToDOB(\\n        bytes32 rollNumber\\n    ) external view returns (bytes32) {\\n        return rollNumberToDOB[rollNumber];\\n    }\\n\\n    /**\\n     * @notice Finds the account address by roll number\\n     * @param rollNumber The roll number of the user\\n     * @return accountAddress The account address of the user\\n     */\\n    function findAccountAddressByRollNumber(\\n        bytes32 rollNumber\\n    ) public view returns (address) {\\n        for (uint256 i = 0; i < userAddresses.length; i++) {\\n            address userAddress = userAddresses[i];\\n            if (users[userAddress].rollNumber == rollNumber) {\\n                return userAddress;\\n            }\\n        }\\n        revert UserManager__RollNumberNotFound(rollNumber);\\n    }\\n}\\n\",\"keccak256\":\"0xf77663827d1062ef143bdae280adb2650016ebfd40ff19ae38d098a42d9d4e0e\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061124f806100206000396000f3fe608060405234801561001057600080fd5b50600436106100885760003560e01c8063957885351161005b578063957885351461013b578063a19ed68614610157578063a90dbe0314610175578063f8f98b791461019157610088565b80636f77926b1461008d5780637b372555146100bd5780637d3edab9146100ed5780638b5c93351461011d575b600080fd5b6100a760048036038101906100a291906109c6565b6101ad565b6040516100b49190610a5d565b60405180910390f35b6100d760048036038101906100d29190610aa4565b6102f7565b6040516100e49190610ae0565b60405180910390f35b61010760048036038101906101029190610aa4565b610313565b6040516101149190610b0a565b60405180910390f35b610125610415565b6040516101329190610b40565b60405180910390f35b61015560048036038101906101509190610b5b565b6104f4565b005b61015f6106bf565b60405161016c9190610b40565b60405180910390f35b61018f600480360381019061018a9190610b5b565b610752565b005b6101ab60048036038101906101a69190610ce1565b61076d565b005b6101b5610917565b6000600160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600001540361023c57816040517f463c75dc0000000000000000000000000000000000000000000000000000000081526004016102339190610b0a565b60405180910390fd5b600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060405180606001604052908160008201548152602001600182015481526020016002820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815250509050919050565b6000806000838152602001908152602001600020549050919050565b600080600090505b6002805490508110156103d25760006002828154811061033e5761033d610d59565b5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905083600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000154036103be578092505050610410565b5080806103ca90610dc1565b91505061031b565b50816040517fb9c845f40000000000000000000000000000000000000000000000000000000081526004016104079190610ae0565b60405180910390fd5b919050565b60008073ffffffffffffffffffffffffffffffffffffffff16600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16036104b557600090506104f1565b7fb59f440754e07ccf4f8158d21ab17643d0854c21b74aaffee912ad01931b2283336040516104e49190610b0a565b60405180910390a1600190505b90565b81600080838152602001908152602001600020541461054c5780826040517f5de5f27e000000000000000000000000000000000000000000000000000000008152600401610543929190610e09565b60405180910390fd5b600060405180606001604052808381526020018481526020013373ffffffffffffffffffffffffffffffffffffffff16815250905080600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082015181600001556020820151816001015560408201518160020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055509050506002339080600181540180825580915050600190039060005260206000200160009091909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550817ffd36a4de7a8bebcaf4b1cb99bf5412f3612d9b0f5ba9ddacb59d0784cd4da28a846040516106b29190610ae0565b60405180910390a2505050565b600080600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000015403610713576000905061074f565b7f8d15fde878cff665868ed7579eb5081db6508d4249df61dcdd7699a5301d9874336040516107429190610b0a565b60405180910390a1600190505b90565b80600080848152602001908152602001600020819055505050565b6040518060400160405280600e81526020017f736f6d657468696e675f656c7365000000000000000000000000000000000000815250805190602001208180519060200120146107f65781816040517f0ab5f4760000000000000000000000000000000000000000000000000000000081526004016107ed929190610eb1565b60405180910390fd5b600060405180604001604052808481526020013373ffffffffffffffffffffffffffffffffffffffff16815250905080600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082015181600001908161087a91906110f4565b5060208201518160010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550905050826040516108d39190611202565b60405180910390207fdc66d5625246d2f0a5a37b7a15ab06b88858e01299d7b3861ffc77ef178984513360405161090a9190610b0a565b60405180910390a2505050565b60405180606001604052806000801916815260200160008019168152602001600073ffffffffffffffffffffffffffffffffffffffff1681525090565b6000604051905090565b600080fd5b600080fd5b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b600061099382610968565b9050919050565b6109a381610988565b81146109ae57600080fd5b50565b6000813590506109c08161099a565b92915050565b6000602082840312156109dc576109db61095e565b5b60006109ea848285016109b1565b91505092915050565b6000819050919050565b610a06816109f3565b82525050565b610a1581610988565b82525050565b606082016000820151610a3160008501826109fd565b506020820151610a4460208501826109fd565b506040820151610a576040850182610a0c565b50505050565b6000606082019050610a726000830184610a1b565b92915050565b610a81816109f3565b8114610a8c57600080fd5b50565b600081359050610a9e81610a78565b92915050565b600060208284031215610aba57610ab961095e565b5b6000610ac884828501610a8f565b91505092915050565b610ada816109f3565b82525050565b6000602082019050610af56000830184610ad1565b92915050565b610b0481610988565b82525050565b6000602082019050610b1f6000830184610afb565b92915050565b60008115159050919050565b610b3a81610b25565b82525050565b6000602082019050610b556000830184610b31565b92915050565b60008060408385031215610b7257610b7161095e565b5b6000610b8085828601610a8f565b9250506020610b9185828601610a8f565b9150509250929050565b600080fd5b600080fd5b6000601f19601f8301169050919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b610bee82610ba5565b810181811067ffffffffffffffff82111715610c0d57610c0c610bb6565b5b80604052505050565b6000610c20610954565b9050610c2c8282610be5565b919050565b600067ffffffffffffffff821115610c4c57610c4b610bb6565b5b610c5582610ba5565b9050602081019050919050565b82818337600083830152505050565b6000610c84610c7f84610c31565b610c16565b905082815260208101848484011115610ca057610c9f610ba0565b5b610cab848285610c62565b509392505050565b600082601f830112610cc857610cc7610b9b565b5b8135610cd8848260208601610c71565b91505092915050565b60008060408385031215610cf857610cf761095e565b5b600083013567ffffffffffffffff811115610d1657610d15610963565b5b610d2285828601610cb3565b925050602083013567ffffffffffffffff811115610d4357610d42610963565b5b610d4f85828601610cb3565b9150509250929050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b6000819050919050565b6000610dcc82610db7565b91507fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8203610dfe57610dfd610d88565b5b600182019050919050565b6000604082019050610e1e6000830185610ad1565b610e2b6020830184610ad1565b9392505050565b600081519050919050565b600082825260208201905092915050565b60005b83811015610e6c578082015181840152602081019050610e51565b60008484015250505050565b6000610e8382610e32565b610e8d8185610e3d565b9350610e9d818560208601610e4e565b610ea681610ba5565b840191505092915050565b60006040820190508181036000830152610ecb8185610e78565b90508181036020830152610edf8184610e78565b90509392505050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052602260045260246000fd5b60006002820490506001821680610f2f57607f821691505b602082108103610f4257610f41610ee8565b5b50919050565b60008190508160005260206000209050919050565b60006020601f8301049050919050565b600082821b905092915050565b600060088302610faa7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff82610f6d565b610fb48683610f6d565b95508019841693508086168417925050509392505050565b6000819050919050565b6000610ff1610fec610fe784610db7565b610fcc565b610db7565b9050919050565b6000819050919050565b61100b83610fd6565b61101f61101782610ff8565b848454610f7a565b825550505050565b600090565b611034611027565b61103f818484611002565b505050565b5b818110156110635761105860008261102c565b600181019050611045565b5050565b601f8211156110a85761107981610f48565b61108284610f5d565b81016020851015611091578190505b6110a561109d85610f5d565b830182611044565b50505b505050565b600082821c905092915050565b60006110cb600019846008026110ad565b1980831691505092915050565b60006110e483836110ba565b9150826002028217905092915050565b6110fd82610e32565b67ffffffffffffffff81111561111657611115610bb6565b5b6111208254610f17565b61112b828285611067565b600060209050601f83116001811461115e576000841561114c578287015190505b61115685826110d8565b8655506111be565b601f19841661116c86610f48565b60005b828110156111945784890151825560018201915060208501945060208101905061116f565b868310156111b157848901516111ad601f8916826110ba565b8355505b6001600288020188555050505b505050505050565b600081905092915050565b60006111dc82610e32565b6111e681856111c6565b93506111f6818560208601610e4e565b80840191505092915050565b600061120e82846111d1565b91508190509291505056fea26469706673582212208a6bbcbade5fd6c9781271e4557822877010c570bf2aa4a0e5b3b4d663d0f7eb64736f6c63430008110033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100885760003560e01c8063957885351161005b578063957885351461013b578063a19ed68614610157578063a90dbe0314610175578063f8f98b791461019157610088565b80636f77926b1461008d5780637b372555146100bd5780637d3edab9146100ed5780638b5c93351461011d575b600080fd5b6100a760048036038101906100a291906109c6565b6101ad565b6040516100b49190610a5d565b60405180910390f35b6100d760048036038101906100d29190610aa4565b6102f7565b6040516100e49190610ae0565b60405180910390f35b61010760048036038101906101029190610aa4565b610313565b6040516101149190610b0a565b60405180910390f35b610125610415565b6040516101329190610b40565b60405180910390f35b61015560048036038101906101509190610b5b565b6104f4565b005b61015f6106bf565b60405161016c9190610b40565b60405180910390f35b61018f600480360381019061018a9190610b5b565b610752565b005b6101ab60048036038101906101a69190610ce1565b61076d565b005b6101b5610917565b6000600160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600001540361023c57816040517f463c75dc0000000000000000000000000000000000000000000000000000000081526004016102339190610b0a565b60405180910390fd5b600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060405180606001604052908160008201548152602001600182015481526020016002820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815250509050919050565b6000806000838152602001908152602001600020549050919050565b600080600090505b6002805490508110156103d25760006002828154811061033e5761033d610d59565b5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905083600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000154036103be578092505050610410565b5080806103ca90610dc1565b91505061031b565b50816040517fb9c845f40000000000000000000000000000000000000000000000000000000081526004016104079190610ae0565b60405180910390fd5b919050565b60008073ffffffffffffffffffffffffffffffffffffffff16600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16036104b557600090506104f1565b7fb59f440754e07ccf4f8158d21ab17643d0854c21b74aaffee912ad01931b2283336040516104e49190610b0a565b60405180910390a1600190505b90565b81600080838152602001908152602001600020541461054c5780826040517f5de5f27e000000000000000000000000000000000000000000000000000000008152600401610543929190610e09565b60405180910390fd5b600060405180606001604052808381526020018481526020013373ffffffffffffffffffffffffffffffffffffffff16815250905080600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082015181600001556020820151816001015560408201518160020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055509050506002339080600181540180825580915050600190039060005260206000200160009091909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550817ffd36a4de7a8bebcaf4b1cb99bf5412f3612d9b0f5ba9ddacb59d0784cd4da28a846040516106b29190610ae0565b60405180910390a2505050565b600080600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000015403610713576000905061074f565b7f8d15fde878cff665868ed7579eb5081db6508d4249df61dcdd7699a5301d9874336040516107429190610b0a565b60405180910390a1600190505b90565b80600080848152602001908152602001600020819055505050565b6040518060400160405280600e81526020017f736f6d657468696e675f656c7365000000000000000000000000000000000000815250805190602001208180519060200120146107f65781816040517f0ab5f4760000000000000000000000000000000000000000000000000000000081526004016107ed929190610eb1565b60405180910390fd5b600060405180604001604052808481526020013373ffffffffffffffffffffffffffffffffffffffff16815250905080600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082015181600001908161087a91906110f4565b5060208201518160010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550905050826040516108d39190611202565b60405180910390207fdc66d5625246d2f0a5a37b7a15ab06b88858e01299d7b3861ffc77ef178984513360405161090a9190610b0a565b60405180910390a2505050565b60405180606001604052806000801916815260200160008019168152602001600073ffffffffffffffffffffffffffffffffffffffff1681525090565b6000604051905090565b600080fd5b600080fd5b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b600061099382610968565b9050919050565b6109a381610988565b81146109ae57600080fd5b50565b6000813590506109c08161099a565b92915050565b6000602082840312156109dc576109db61095e565b5b60006109ea848285016109b1565b91505092915050565b6000819050919050565b610a06816109f3565b82525050565b610a1581610988565b82525050565b606082016000820151610a3160008501826109fd565b506020820151610a4460208501826109fd565b506040820151610a576040850182610a0c565b50505050565b6000606082019050610a726000830184610a1b565b92915050565b610a81816109f3565b8114610a8c57600080fd5b50565b600081359050610a9e81610a78565b92915050565b600060208284031215610aba57610ab961095e565b5b6000610ac884828501610a8f565b91505092915050565b610ada816109f3565b82525050565b6000602082019050610af56000830184610ad1565b92915050565b610b0481610988565b82525050565b6000602082019050610b1f6000830184610afb565b92915050565b60008115159050919050565b610b3a81610b25565b82525050565b6000602082019050610b556000830184610b31565b92915050565b60008060408385031215610b7257610b7161095e565b5b6000610b8085828601610a8f565b9250506020610b9185828601610a8f565b9150509250929050565b600080fd5b600080fd5b6000601f19601f8301169050919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b610bee82610ba5565b810181811067ffffffffffffffff82111715610c0d57610c0c610bb6565b5b80604052505050565b6000610c20610954565b9050610c2c8282610be5565b919050565b600067ffffffffffffffff821115610c4c57610c4b610bb6565b5b610c5582610ba5565b9050602081019050919050565b82818337600083830152505050565b6000610c84610c7f84610c31565b610c16565b905082815260208101848484011115610ca057610c9f610ba0565b5b610cab848285610c62565b509392505050565b600082601f830112610cc857610cc7610b9b565b5b8135610cd8848260208601610c71565b91505092915050565b60008060408385031215610cf857610cf761095e565b5b600083013567ffffffffffffffff811115610d1657610d15610963565b5b610d2285828601610cb3565b925050602083013567ffffffffffffffff811115610d4357610d42610963565b5b610d4f85828601610cb3565b9150509250929050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b6000819050919050565b6000610dcc82610db7565b91507fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8203610dfe57610dfd610d88565b5b600182019050919050565b6000604082019050610e1e6000830185610ad1565b610e2b6020830184610ad1565b9392505050565b600081519050919050565b600082825260208201905092915050565b60005b83811015610e6c578082015181840152602081019050610e51565b60008484015250505050565b6000610e8382610e32565b610e8d8185610e3d565b9350610e9d818560208601610e4e565b610ea681610ba5565b840191505092915050565b60006040820190508181036000830152610ecb8185610e78565b90508181036020830152610edf8184610e78565b90509392505050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052602260045260246000fd5b60006002820490506001821680610f2f57607f821691505b602082108103610f4257610f41610ee8565b5b50919050565b60008190508160005260206000209050919050565b60006020601f8301049050919050565b600082821b905092915050565b600060088302610faa7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff82610f6d565b610fb48683610f6d565b95508019841693508086168417925050509392505050565b6000819050919050565b6000610ff1610fec610fe784610db7565b610fcc565b610db7565b9050919050565b6000819050919050565b61100b83610fd6565b61101f61101782610ff8565b848454610f7a565b825550505050565b600090565b611034611027565b61103f818484611002565b505050565b5b818110156110635761105860008261102c565b600181019050611045565b5050565b601f8211156110a85761107981610f48565b61108284610f5d565b81016020851015611091578190505b6110a561109d85610f5d565b830182611044565b50505b505050565b600082821c905092915050565b60006110cb600019846008026110ad565b1980831691505092915050565b60006110e483836110ba565b9150826002028217905092915050565b6110fd82610e32565b67ffffffffffffffff81111561111657611115610bb6565b5b6111208254610f17565b61112b828285611067565b600060209050601f83116001811461115e576000841561114c578287015190505b61115685826110d8565b8655506111be565b601f19841661116c86610f48565b60005b828110156111945784890151825560018201915060208501945060208101905061116f565b868310156111b157848901516111ad601f8916826110ba565b8355505b6001600288020188555050505b505050505050565b600081905092915050565b60006111dc82610e32565b6111e681856111c6565b93506111f6818560208601610e4e565b80840191505092915050565b600061120e82846111d1565b91508190509291505056fea26469706673582212208a6bbcbade5fd6c9781271e4557822877010c570bf2aa4a0e5b3b4d663d0f7eb64736f6c63430008110033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "findAccountAddressByRollNumber(bytes32)": {
+        "params": {
+          "rollNumber": "The roll number of the user"
+        },
+        "returns": {
+          "_0": "accountAddress The account address of the user"
+        }
+      },
+      "getRollNumberToDOB(bytes32)": {
+        "params": {
+          "rollNumber": "The roll number of the user"
+        },
+        "returns": {
+          "_0": "dateOfBirth The date of birth of the user"
+        }
+      },
+      "getUser(address)": {
+        "params": {
+          "userAddress": "The address of the user"
+        },
+        "returns": {
+          "_0": "user The user details"
+        }
+      },
+      "loginAdmin()": {
+        "returns": {
+          "result": "True if the login is successful, false otherwise"
+        }
+      },
+      "loginUser()": {
+        "returns": {
+          "result": "True if the login is successful, false otherwise"
+        }
+      },
+      "registerAdmin(string,string)": {
+        "params": {
+          "emailId": "The email ID of the admin",
+          "password": "The password of the admin"
+        }
+      },
+      "registerUser(bytes32,bytes32)": {
+        "params": {
+          "DOB": "The date of birth of the user",
+          "rollNumber": "The roll number of the user"
+        }
+      },
+      "setRollNumberToDOB(bytes32,bytes32)": {
+        "params": {
+          "dateOfBirth": "The date of birth of the user",
+          "rollNumber": "The roll number of the user"
+        }
+      }
+    },
+    "title": "UserManager",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "findAccountAddressByRollNumber(bytes32)": {
+        "notice": "Finds the account address by roll number"
+      },
+      "getRollNumberToDOB(bytes32)": {
+        "notice": "Gets the date of birth for a given roll number"
+      },
+      "getUser(address)": {
+        "notice": "Gets the details of a particular user"
+      },
+      "loginAdmin()": {
+        "notice": "Logs in an admin"
+      },
+      "loginUser()": {
+        "notice": "Logs in a user by verifying their private key"
+      },
+      "registerAdmin(string,string)": {
+        "notice": "Registers a new admin"
+      },
+      "registerUser(bytes32,bytes32)": {
+        "notice": "Registers a new user"
+      },
+      "setRollNumberToDOB(bytes32,bytes32)": {
+        "notice": "Sets the date of birth for a given roll number"
+      }
+    },
+    "notice": "A contract to register and login users",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 251,
+        "contract": "contracts/UserManager.sol:UserManager",
+        "label": "rollNumberToDOB",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_mapping(t_bytes32,t_bytes32)"
+      },
+      {
+        "astId": 256,
+        "contract": "contracts/UserManager.sol:UserManager",
+        "label": "users",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_mapping(t_address,t_struct(User)239_storage)"
+      },
+      {
+        "astId": 259,
+        "contract": "contracts/UserManager.sol:UserManager",
+        "label": "userAddresses",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_array(t_address)dyn_storage"
+      },
+      {
+        "astId": 264,
+        "contract": "contracts/UserManager.sol:UserManager",
+        "label": "admins",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_mapping(t_address,t_struct(Admin)244_storage)"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_address)dyn_storage": {
+        "base": "t_address",
+        "encoding": "dynamic_array",
+        "label": "address[]",
+        "numberOfBytes": "32"
+      },
+      "t_bytes32": {
+        "encoding": "inplace",
+        "label": "bytes32",
+        "numberOfBytes": "32"
+      },
+      "t_mapping(t_address,t_struct(Admin)244_storage)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => struct UserManager.Admin)",
+        "numberOfBytes": "32",
+        "value": "t_struct(Admin)244_storage"
+      },
+      "t_mapping(t_address,t_struct(User)239_storage)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => struct UserManager.User)",
+        "numberOfBytes": "32",
+        "value": "t_struct(User)239_storage"
+      },
+      "t_mapping(t_bytes32,t_bytes32)": {
+        "encoding": "mapping",
+        "key": "t_bytes32",
+        "label": "mapping(bytes32 => bytes32)",
+        "numberOfBytes": "32",
+        "value": "t_bytes32"
+      },
+      "t_string_storage": {
+        "encoding": "bytes",
+        "label": "string",
+        "numberOfBytes": "32"
+      },
+      "t_struct(Admin)244_storage": {
+        "encoding": "inplace",
+        "label": "struct UserManager.Admin",
+        "members": [
+          {
+            "astId": 241,
+            "contract": "contracts/UserManager.sol:UserManager",
+            "label": "emailId",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_string_storage"
+          },
+          {
+            "astId": 243,
+            "contract": "contracts/UserManager.sol:UserManager",
+            "label": "account",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address"
+          }
+        ],
+        "numberOfBytes": "64"
+      },
+      "t_struct(User)239_storage": {
+        "encoding": "inplace",
+        "label": "struct UserManager.User",
+        "members": [
+          {
+            "astId": 234,
+            "contract": "contracts/UserManager.sol:UserManager",
+            "label": "rollNumber",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_bytes32"
+          },
+          {
+            "astId": 236,
+            "contract": "contracts/UserManager.sol:UserManager",
+            "label": "dateOfBirth",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_bytes32"
+          },
+          {
+            "astId": 238,
+            "contract": "contracts/UserManager.sol:UserManager",
+            "label": "accountAddress",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address"
+          }
+        ],
+        "numberOfBytes": "96"
+      }
+    }
+  }
+}
