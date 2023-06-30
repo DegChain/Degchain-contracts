@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.8;
 
-//imports
 import "./UserManager.sol";
 
 contract DocumentManager {
@@ -30,8 +29,8 @@ contract DocumentManager {
     Document[] private documents;
 
     //constructor
-    constructor(UserManager _userManager) {
-        userManager = _userManager;
+    constructor(address _userManagerAddress) {
+        userManager = UserManager(_userManagerAddress);
         documentIdCounter = 0;
     }
 
@@ -39,22 +38,22 @@ contract DocumentManager {
      * @dev Uploads a new document for a user.
      * @param documentName The name of the document.
      * @param ipfsHash The IPFS hash of the document.
-     * @param userAddress The address of the user.
+     * @param ownerAddress The address of the user.
      */
     function uploadDocument(
         string memory documentName,
         string memory ipfsHash,
-        address userAddress
+        address ownerAddress
     ) external onlyRegisteredUser {
         require(bytes(ipfsHash).length > 0, "IPFS Hash cannot be empty.");
         Document memory newDocument = Document({
             documentId: documentIdCounter,
             documentName: documentName,
             ipfsHash: ipfsHash,
-            ownerAddress: userAddress
+            ownerAddress: ownerAddress
         });
         //add the new document to the mapping
-        userToDocuments[userAddress].push(newDocument);
+        userToDocuments[ownerAddress].push(newDocument);
         documents.push(newDocument);
         documentIdCounter++;
     }
